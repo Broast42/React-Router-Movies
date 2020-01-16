@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
 import axios from 'axios';
 
@@ -18,7 +17,7 @@ const MovieList = props => {
     }
     
     getMovies();
-  }, []);
+  },[]);
   
   return (
     <div className="movie-list">
@@ -29,30 +28,30 @@ const MovieList = props => {
   );
 }
 
-function MovieDetails({ movie }) {
-  const { title, director, metascore, stars, id } = movie;
-  return (
-    <div className="movie-card">
+// function MovieDetails({ movie }) {
+//   const { title, director, metascore, stars, id } = movie;
+//   return (
+//     <div className="movie-card">
 
-      <Link to={`/movies/${id}` }>
-        <h2>{title}</h2>
-      </Link>
+//       <Link to={`/movies/${id}` }>
+//         <h2>{title}</h2>
+//       </Link>
       
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
-      <h3>Actors</h3>
+//       <div className="movie-director">
+//         Director: <em>{director}</em>
+//       </div>
+//       <div className="movie-metascore">
+//         Metascore: <strong>{metascore}</strong>
+//       </div>
+//       <h3>Actors</h3>
 
-      {stars.map(star => (
-        <div key={star} className="movie-star">
-          {star}
-        </div>
-      ))}
-    </div>
-  );
-}
+//       {stars.map(star => (
+//         <div key={star} className="movie-star">
+//           {star}
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
 
 export default MovieList;
